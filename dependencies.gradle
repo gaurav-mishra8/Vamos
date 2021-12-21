@@ -1,0 +1,26 @@
+ext {
+    minSdkVersion = 21
+    targetSdkVersion = 31
+    compileSdkVersion = 31
+
+    compose_version = '1.0.5'
+    retrofitVersion = '2.6.1'
+    kotlinVersion = '1.5.1'
+    coroutineVersion = '1.3.0'
+
+    android = [
+            coreKtx          : "androidx.core:core-ktx:1.7.0",
+            appcompat        : "androidx.appcompat:appcompat:1.4.0",
+            compose          : "androidx.compose.ui:ui:1.0.5",
+            composeTooling   : "androidx.compose.ui:ui-tooling:1.0.5",
+            composeFoundation: "androidx.compose.foundation:foundation:1.0.5",
+            composeMaterial  : "androidx.compose.material:material:1.0.5",
+    ]
+
+    libraries = [
+            kotlin           : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion",
+            coroutines       : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutineVersion",
+            coroutinesAndroid: "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutineVersion",
+            retrofit2        : "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    ]
+}
