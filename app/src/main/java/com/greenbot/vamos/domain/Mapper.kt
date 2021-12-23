@@ -9,7 +9,7 @@ package com.greenbot.vamos.domain
  */
 interface Mapper<T, D> {
 
-    fun mapToDomain(e: T): D
+    fun mapToDomain(type: T): D
 
-    fun mapFromDomain(d: D): T
+    fun mapFromDomain(type: D): T
 }

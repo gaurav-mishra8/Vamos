@@ -1,7 +1,5 @@
 package com.greenbot.vamos.domain.model
 
-import java.util.*
-
 data class Task(
     val id: Long,
     val title: String = "",

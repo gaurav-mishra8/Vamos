@@ -7,6 +7,7 @@ import com.greenbot.vamos.data.TaskRepositoryImpl
 import com.greenbot.vamos.data.local.LocalTaskDataSource
 import com.greenbot.vamos.data.local.db.TaskDao
 import com.greenbot.vamos.data.local.db.TaskDatabase
+import com.greenbot.vamos.data.mapper.TaskEntityMapper
 import com.greenbot.vamos.data.remote.RemoteTaskDataSource
 import com.greenbot.vamos.domain.repository.TaskRepository
 import dagger.Module
@@ -44,8 +45,8 @@ class DataModule {
     @Singleton
     @Provides
     @Named("local")
-    fun provideLocalDataStore(taskDao: TaskDao): TaskDataStore {
-        return LocalTaskDataSource(taskDao)
+    fun provideLocalDataStore(taskDao: TaskDao, taskEntityMapper: TaskEntityMapper): TaskDataStore {
+        return LocalTaskDataSource(taskDao, taskEntityMapper)
     }
 
     @Singleton

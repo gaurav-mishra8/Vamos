@@ -2,28 +2,35 @@ package com.greenbot.vamos.data.local
 
 import com.greenbot.vamos.data.TaskDataStore
 import com.greenbot.vamos.data.local.db.TaskDao
+import com.greenbot.vamos.data.mapper.TaskEntityMapper
 import com.greenbot.vamos.domain.model.Task
-import kotlinx.coroutines.flow.Flow
-import javax.inject.Inject
-import javax.inject.Named
 
 class LocalTaskDataSource(
-    private val taskDao: TaskDao
+    private val taskDao: TaskDao,
+    private val entityMapper: TaskEntityMapper
 ) : TaskDataStore {
 
-    override fun getAllTasks(): Flow<List<Task>> {
-        return taskDao.getAllTasks()
+    override fun getAllTasks(): List<Task> {
+        return taskDao.getAllTasks().map {
+            entityMapper.mapToDomain(it)
+        }
     }
 
     override fun saveTask(task: Task): Boolean {
-        return taskDao.insert(task)
+        taskDao.insert(entityMapper.mapFromDomain(task))
+        return true
     }
 
-    override fun getTask(taskId: Long): Task {
-        return taskDao.getTaskById(taskId = taskId)
+    override fun getTask(taskId: Long): Task? {
+        val entity = taskDao.getTaskById(taskId)
+        return if (entity != null)
+            entityMapper.mapToDomain(entity)
+        else
+            null
     }
 
     override fun deleteTask(taskId: Long): Boolean {
-        TODO("Not yet implemented")
+        taskDao.deleteTask(taskId)
+        return true
     }
 }

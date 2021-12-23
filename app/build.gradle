@@ -64,11 +64,12 @@ dependencies {
 
     implementation room.lib
     implementation room.ktx
-    annotationProcessor room.compiler
+    kapt room.compiler
 
     implementation libraries.kotlin
     implementation libraries.coroutines
     implementation libraries.coroutinesAndroid
+    implementation libraries.timber
 
     implementation dagger.hilt
     kapt dagger.kapt
