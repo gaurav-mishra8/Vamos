@@ -17,6 +17,7 @@ ext {
 
     archTestVersion = '2.0.0'
     coroutineTest = '1.4.2'
+    mockitoVersion = '4.2.0'
 
     android = [
             coreKtx         : "androidx.core:core-ktx:1.7.0",
@@ -59,6 +60,7 @@ ext {
     ]
 
     testing = [
+            mockito : "org.mockito:mockito-core:$mockitoVersion",
             archTesting: "androidx.arch.core:core-testing:$archTestVersion",
             coroutinesTest: "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutineTest"
     ]

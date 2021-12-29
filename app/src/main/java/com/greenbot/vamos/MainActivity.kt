@@ -20,21 +20,6 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
-            Scaffold(topBar = {
-                AppBar()
-            }) {
-                TaskList()
-            }
-        }
-    }
 
-    @Composable
-    private fun AppBar() {
-        Surface(color = Color.Green, modifier = Modifier.fillMaxWidth()) {
-            Box(contentAlignment = Alignment.Center) {
-                Text(text = "VAMOS")
-            }
-        }
     }
 }
