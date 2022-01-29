@@ -61,6 +61,7 @@ dependencies {
     implementation lifecycle.viewModelCompose
     implementation lifecycle.viewModelSavedState
     implementation lifecycle.livedata
+    implementation lifecycle.runtime
 
     implementation room.lib
     implementation room.ktx

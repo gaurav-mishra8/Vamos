@@ -19,5 +19,4 @@ abstract class AbstractViewModel<I : MviIntent, S : MviViewState, E : MviSingleE
 
     protected suspend fun sendEvent(event: E) = eventChannel.send(event)
     protected val intentFlow: SharedFlow<I> get() = intentMutableFlow
-
 }

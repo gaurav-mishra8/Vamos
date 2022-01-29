@@ -6,13 +6,13 @@ import com.greenbot.vamos.domain.result.Result
 import com.greenbot.vamos.domain.usecases.GetAllTasksUseCase
 import com.greenbot.vamos.mvi.AbstractViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.FlowPreview
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.*
 import timber.log.Timber
 import javax.inject.Inject
 
+@ExperimentalCoroutinesApi
 @HiltViewModel
-@OptIn(FlowPreview::class)
 class TaskListViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle,
     private val getAllTasksUseCase: GetAllTasksUseCase

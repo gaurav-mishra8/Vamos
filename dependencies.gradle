@@ -38,7 +38,8 @@ ext {
             viewModel          : "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version",
             viewModelCompose   : "androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_version",
             viewModelSavedState: "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version",
-            livedata           : "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+            livedata           : "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version",
+            runtime            : "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
     ]
 
     dagger = [
@@ -60,8 +61,8 @@ ext {
     ]
 
     testing = [
-            mockito : "org.mockito:mockito-core:$mockitoVersion",
-            archTesting: "androidx.arch.core:core-testing:$archTestVersion",
+            mockito       : "org.mockito:mockito-core:$mockitoVersion",
+            archTesting   : "androidx.arch.core:core-testing:$archTestVersion",
             coroutinesTest: "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutineTest"
     ]
 }
